@@ -1,7 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.header {
+    background-color: #fef3c7;
+    padding: 1rem 2rem;
+    box-shadow: 2px 3px 18px -1px rgba(0,0,0,0.16);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.btn {
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f59e0b;
+    transition: .2s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 3px 2px 18px -1px rgba(0,0,0,0.16) inset;
+}
+
+.main {
+    padding: 2rem 3rem;
+}
+
+.main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form {
     display: none;
+    background-color: #fcd34d;
+    padding: 2rem;
+    border-radius: 20px;
+    flex-direction: column;
+    box-shadow: 4px 4px 32px -18px rgba(0,0,0,0.38);
+}
+
+.form h2 {
+    margin-bottom: 1rem;
+}
+
+.title-input input, .author-input input, .pages-input input{
+    display: block;
+    width: 100%;
+    margin: .5rem 0 1rem;
+    padding: .5rem .5rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.buttons .btn-add {
+    background-color: green;
+    color: white;
+}
+
+.buttons .btn-close {
+    background-color: red;
+    color: white;
 }
 
 .show {
+    display: flex;
+}
+
+.books {
+    align-self: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #78350f;
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 4px 4px 32px -18px rgba(0,0,0,0.38);
+}
+
+.card .info p {
+    margin: 5px 0;
+}
+
+.card button {
+    background-color: red;
     display: block;
+    width: 100%;
+}
+
+.card .erase {
+    margin: 1rem 0;
+}
+
+.card .readBtn {
+    /* padding: .5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: .2s;
+    color: white; */
+    background-color: green;
+    color: white;
 }

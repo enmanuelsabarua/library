@@ -5,55 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <head>
-        <h1>Library</h1>
-        <button type="button" id="newBook">New Book</button>
-    </head>
+    <header class="header">
+        <div class="container">
+            <h1>Library</h1>
+            <button type="button" id="newBook" class="btn">New Book</button>
 
-    <main>
-        <form class="form">
-            <h2>Book info</h2>
+        </div>
+    </header>
 
-            <div>
-                <label for="title">Title: </label>
-                <input type="text" id="title" name="title">
-            </div>
-
-            <div>
-                <label for="author">Author: </label>
-                <input type="text" id="author" name="author">
-            </div>
-
-            <div>
-                <label for="pages">Pages: </label>
-                <input type="number" id="pages" name="pages">
-            </div>
-
-            <div>
-                <input type="checkbox" name="read" id="read">
-                <label for="read">Have you read the book?</label>
-            </div>
-
-            <div>
-                <button type="submit" id="add">Add</button>
-                <button type="button" id="close-form">Close</button>
-            </div>
-        </form>
-
-        <section class="books">
-            <!-- <div class="card" data-read="true" data-id="0">
-                <div class="info">
-                    <h2>The Hobbit</h2>
-                    <p>Author: Juan</p>
-                    <p>Pages: 250</p>
+    <main class="main">
+        <div class="container">
+            <form class="form" action="">
+                <h2>Book info</h2>
+    
+                <div class="title-input">
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" name="title" required>
                 </div>
-                <button type="button" class="erase">Delete</button>
-                <button type="button" class="readBtn">Already read</button>
-            </div> -->
-        </section>
+    
+                <div class="author-input">
+                    <label for="author">Author: </label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+    
+                <div class="pages-input">
+                    <label for="pages">Pages: </label>
+                    <input type="number" id="pages" name="pages" required min="0">
+                </div>
+    
+                <div class="read-status">
+                    <input type="checkbox" name="read" id="read">
+                    <label for="read">Have you read the book?</label>
+                </div>
+    
+                <div class="buttons">
+                    <button type="submit" id="add" class="btn btn-add">Add</button>
+                    <button type="button" id="close-form" class="btn btn-close">Close</button>
+                </div>
+            </form>
+    
+            <section class="books">
+    
+            </section>
+
+        </div>
     </main>
     
     <script src="./app.js"></script>

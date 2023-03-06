@@ -11,13 +11,13 @@ function Book(id, title, author, pages, read) {
 }
 
 // Some example books
-const book1 = new Book(0, 'Steve Jobs', 'Julius', 670, true);
-const book2 = new Book(1, 'GOT', 'Martin', 540, false);
-const book3 = new Book(2, 'Cracking the code', 'abs', 640, false);
+// const book1 = new Book(0, 'Steve Jobs', 'Julius', 670, true);
+// const book2 = new Book(1, 'GOT', 'Martin', 540, false);
+// const book3 = new Book(2, 'Cracking the code', 'abs', 640, false);
 
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
+// myLibrary.push(book1);
+// myLibrary.push(book2);
+// myLibrary.push(book3);
 
 // Add the object book to myLibrary array
 function addBookToLibrary() {
@@ -48,19 +48,26 @@ function addNewBook(book) {
     title.innerText = book.title;
 
     const author = document.createElement('p');
-    author.innerText = book.author;
+    author.innerText = `Author: ${book.author}`;
 
     const pages = document.createElement('p');
-    pages.innerText = book.pages;
+    pages.innerText = `Pages: ${book.pages}`;
 
 
     const btn = document.createElement('button');
     btn.classList.add('erase');
+    btn.classList.add('btn');
     btn.innerText = 'Delete';
     // btn.dataset.id = myLibrary.length;
 
     const btnRead = document.createElement('button');
-    btnRead.classList.add('readBtn');
+    if (book.read) {
+        btnRead.classList.add('readBtn');
+    }
+    
+    btnRead.classList.add('status');
+
+    btnRead.classList.add('btn');
     btnRead.innerText = book.read ? 'Already read' : 'Not read yet';
     // btnRead.dataset.read = book.read;
 
@@ -99,18 +106,25 @@ function showBooks() {
         title.innerText = myLibrary[i].title;
 
         const author = document.createElement('p');
-        author.innerText = myLibrary[i].author;
+        author.innerText = `Author: ${myLibrary[i].author}`;
 
         const pages = document.createElement('p');
-        pages.innerText = myLibrary[i].pages;
+        pages.innerText = `Pages: ${myLibrary[i].pages}`;
 
 
         const btn = document.createElement('button');
         btn.classList.add('erase');
+        btn.classList.add('btn');
         btn.innerText = 'Delete';
 
         const btnRead = document.createElement('button');
-        btnRead.classList.add('readBtn');
+        if (myLibrary[i].read) {
+            btnRead.classList.add('readBtn');
+        }
+
+        btnRead.classList.add('status');
+
+        btnRead.classList.add('btn');
         btnRead.innerText = myLibrary[i].read ? 'Already read' : 'Not read yet';
 
         infoDiv.appendChild(title);
@@ -146,7 +160,7 @@ function erase() {
 }
 
 function changeReadStatus() {
-    const readBtns = document.querySelectorAll('.readBtn');
+    const readBtns = document.querySelectorAll('.status');
     
     readBtns.forEach(btn => {
         
@@ -182,20 +196,29 @@ function changeReadStatus() {
 // Add a new book
 const add = document.querySelector('#add');
 add.addEventListener('click', e => {
-    e.preventDefault();
-
-    addBookToLibrary();
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const pages = document.querySelector('#pages');
     
-    console.log(myLibrary);
+    
+    if (title.value != '' && author.value != '' && pages.value != '' ){
+        e.preventDefault();
+        addBookToLibrary();
+
+        title.value = '';
+        author.value = '';
+        pages.value = '';
+    }
+
 });
 
 const closeForm = document.querySelector('#close-form');
 closeForm.addEventListener('click', e => {
-    e.preventDefault();
-
+    
     const form = document.querySelector('.form');
     
     form.classList.remove('show');
+    
 });
 
 // Show the form
