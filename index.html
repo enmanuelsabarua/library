@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <head>
+        <h1>Library</h1>
+        <button type="button" id="newBook">New Book</button>
+    </head>
+
+    <main>
+        <form class="form">
+            <h2>Book info</h2>
+
+            <div>
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div>
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author">
+            </div>
+
+            <div>
+                <label for="pages">Pages: </label>
+                <input type="number" id="pages" name="pages">
+            </div>
+
+            <div>
+                <input type="checkbox" name="read" id="read">
+                <label for="read">Have you read the book?</label>
+            </div>
+
+            <div>
+                <button type="submit" id="add">Add</button>
+                <button type="button" id="close-form">Close</button>
+            </div>
+        </form>
+
+        <section class="books">
+            <!-- <div class="card" data-read="true" data-id="0">
+                <div class="info">
+                    <h2>The Hobbit</h2>
+                    <p>Author: Juan</p>
+                    <p>Pages: 250</p>
+                </div>
+                <button type="button" class="erase">Delete</button>
+                <button type="button" class="readBtn">Already read</button>
+            </div> -->
+        </section>
+    </main>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
