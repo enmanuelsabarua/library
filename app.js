@@ -2,12 +2,18 @@ let myLibrary = [];
 const books = document.querySelector('.books');
 
 // Create the book constructor
-function Book(id, title, author, pages, read) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    changeRStatus() {
+        this.read = this.read ? this.read = false : this.read = true;
+    }
 }
 
 // Some example books
@@ -169,11 +175,7 @@ function changeReadStatus() {
             // Change the read status on myLibrary array
             for (let i = 0; i < myLibrary.length; i++) {
                 if (myLibrary[i].id == e.target.parentElement.dataset.id) {
-                    if (e.target.parentElement.dataset.read == 'true') {
-                        myLibrary[i].read = false;
-                    } else {
-                        myLibrary[i].read = true;
-                    }
+                    myLibrary[i].changeRStatus();
                 }
             }
 
